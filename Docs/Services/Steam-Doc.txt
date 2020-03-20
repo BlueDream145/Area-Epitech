@@ -1,0 +1,32 @@
+﻿# Documentation pour le service Steam
+
+	Envoyer les identifiants via les params Username et Password de RegisterService
+	
+		Obtenir sa liste d'amis
+	
+		Requête:
+
+			- int ActionId = 11
+			- string Params = Vide
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=11&token={token}&params=
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 11 // GetFriends
+
+			- public int ServiceId = 6 // Steam
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+		"{ \"data\":[{\"SteamId\":76561198056981711,\"Username\":\"BlueDream\"},{\"SteamId\":76561198835091331,\"Username\":\"Profile is not public.\"}] }"		

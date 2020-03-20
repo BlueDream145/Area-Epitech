@@ -1,0 +1,60 @@
+# Documentation pour le service Dailymotion
+
+	Obtenir les vidéos d'accueil de daylimotion
+	
+		Requête:
+
+			- int ActionId = 14
+			- string Params = Vide
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=14&token={token}&params=
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 14 // GetVideos
+
+			- public int ServiceId = 8 // Dailymotion
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"page":1,"limit":20,"explicit":false,"total":1000,"has_more":true,"list":[{"id":"x7qtvak","title":"Benoist Grossmann (France Digitale) et Dominique Gaillard (France Invest): \"Choose France\", la France toujours attractive ? - 20\/01","channel":"news","owner":"x197cwb"},{"id":"x2t40rc","title":"Property for sale France,French Property for sale,Real Estate France, French Real Estate, Maison \u00e0 vendre,Properties for sale France,French Properties for sale,Maisons \u00e0 vendre,Propri\u00e9t\u00e9 \u00e0 Vendre France, Propri\u00e9t\u00e9 \u00e0 Vendre Fran\u00e7ais, Immobilier France","channel":"news","owner":"x1jjmcb"},{"id":"x7r24nf","title":"Choose France, French Tech 120: la sant\u00e9 Made in France en pleine forme - 25\/01","channel":"news","owner":"x197cwb"},{"id":"x7r3msp","title":"Choose France, French Tech 120 : La sant\u00e9 Made in France en pleine forme - 26\/01","channel":"news","owner":"x197cwb"},{"id":"x76gotl","title":"Do you want to Learn French using Short Sentences? (French books, French Language, French)  For","channel":"news","owner":"x29vv1m"},{"id":"x7ozbw9","title":"Adrien Quatennens, d\u00e9put\u00e9 France Insoumise : \"Aujourd'hui en France, un actf sur deux \u00e0 l'\u00e2ge d'arriver en retraite n'est d\u00e9j\u00e0 plus en emploi. Donc travailler plus longtemps ne fonctionne pas en France.\"","channel":"news","owner":"x2q2ez"},{"id":"x7rt5wd","title":"About For Books  French Kids Eat Everything: How Our Family Moved to France, Cured Picky Eating,","channel":"news","owner":"x2cpx8v"},{"id":"x7rq3hy","title":"Full E-book  Barron s AP French Language and Culture with MP3 CD (Barron s AP French (W\/CD))  For","channel":"news","owner":"x2coxd3"},{"id":"x7rogmg","title":"La France bouge : Emmanuel Poix, dirigeant Le Moulin \u00e0 couleur, l\u2019une des derni\u00e8res fabriques de terres colorantes naturelles en France","channel":"news","owner":"xf4wt7"},{"id":"x7rra69","title":"La France bouge : Nathalie Decroix cofondatrice de La Gazou, poste de musique et d\u2019histoires pour enfants, Made in France","channel":"news","owner":"xf4wt7"},{"id":"x51qy8c","title":"Download Learn French: Do you want to learn french using short Sentences? (French language, French","channel":"news","owner":"x1vvlff"},{"id":"x7rsn8i","title":"La France a tout pour r\u00e9ussir : Le taux de ch\u00f4mage au plus bas en France depuis 2008 - Vendredi 14 f\u00e9vrier","channel":"news","owner":"x197cwb"},{"id":"xmi144","title":"19 20 Poitou-Charentes du 17 11 2011 - Toute l'information en vid\u00e9o de France 2, France 3, France 5, RFO. Les vid\u00e9os d'info de France T\u00e9l\u00e9visions2","channel":"news","owner":"xgzf98"},{"id":"x7rkicv","title":"INVESTISSEMENTS EN FRANCE : \u00ab 64 % DES INVESTISSEURS AMERICAINS JUGENT QUE LA FRANCE EST ATTRACTIVE OU TRES ATTRACTIVE ECONOMIQUEMENT \u00bb - STEPHANIE BARREAU - L\u2019INVITE DE L\u2019ECONOMIE DU 06\/02\/2020","channel":"news","owner":"x2e9el"},{"id":"x3p4rl1","title":"Learn French With Rocket French - Speaking French and Loving French Culture","channel":"news","owner":"x1q05o9"},{"id":"x2antvm","title":"Learn French - Speak French - Learn French Software - Rocket French","channel":"news","owner":"x1h8cgk"},{"id":"x7rilnm","title":"Franck Mouthon (France Biotech) : La France est le second pays europ\u00e9en attirant le plus de capitaux apr\u00e8s le Royaume-Uni - 05\/02","channel":"news","owner":"x197cwb"},{"id":"x7r5bb1","title":"La France bouge : Antonin Laurent, fondateur de LookUp, support d\u2019ordinateur nomade made in France","channel":"news","owner":"xf4wt7"},{"id":"x1ir6eq","title":"Avocat International, French lawyer and Attorney, French solicitor, France, USA, UK France 24","channel":"news","owner":"x15zl2"},{"id":"x7roiba","title":"[Read] Fluent in French: The Most Complete Study Guide to Learn French  For Kindle","channel":"news","owner":"x2cnn96"}]}
+			
+			
+	Rechercher des vidéos dailymotion
+	
+		Requête:
+
+			- int ActionId = 13
+			- string Params = Tag de recherche
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=13&token={token}&params=france
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 13 // GetVideosByTag
+
+			- public int ServiceId = 8 // Dailymotion
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"page":1,"limit":20,"explicit":false,"total":1000,"has_more":true,"list":[{"id":"x7qtvak","title":"Benoist Grossmann (France Digitale) et Dominique Gaillard (France Invest): \"Choose France\", la France toujours attractive ? - 20\/01","channel":"news","owner":"x197cwb"},{"id":"x2t40rc","title":"Property for sale France,French Property for sale,Real Estate France, French Real Estate, Maison \u00e0 vendre,Properties for sale France,French Properties for sale,Maisons \u00e0 vendre,Propri\u00e9t\u00e9 \u00e0 Vendre France, Propri\u00e9t\u00e9 \u00e0 Vendre Fran\u00e7ais, Immobilier France","channel":"news","owner":"x1jjmcb"},{"id":"x7r24nf","title":"Choose France, French Tech 120: la sant\u00e9 Made in France en pleine forme - 25\/01","channel":"news","owner":"x197cwb"},{"id":"x7r3msp","title":"Choose France, French Tech 120 : La sant\u00e9 Made in France en pleine forme - 26\/01","channel":"news","owner":"x197cwb"},{"id":"x76gotl","title":"Do you want to Learn French using Short Sentences? (French books, French Language, French)  For","channel":"news","owner":"x29vv1m"},{"id":"x7ozbw9","title":"Adrien Quatennens, d\u00e9put\u00e9 France Insoumise : \"Aujourd'hui en France, un actf sur deux \u00e0 l'\u00e2ge d'arriver en retraite n'est d\u00e9j\u00e0 plus en emploi. Donc travailler plus longtemps ne fonctionne pas en France.\"","channel":"news","owner":"x2q2ez"},{"id":"x7rt5wd","title":"About For Books  French Kids Eat Everything: How Our Family Moved to France, Cured Picky Eating,","channel":"news","owner":"x2cpx8v"},{"id":"x7rq3hy","title":"Full E-book  Barron s AP French Language and Culture with MP3 CD (Barron s AP French (W\/CD))  For","channel":"news","owner":"x2coxd3"},{"id":"x7rogmg","title":"La France bouge : Emmanuel Poix, dirigeant Le Moulin \u00e0 couleur, l\u2019une des derni\u00e8res fabriques de terres colorantes naturelles en France","channel":"news","owner":"xf4wt7"},{"id":"x7rra69","title":"La France bouge : Nathalie Decroix cofondatrice de La Gazou, poste de musique et d\u2019histoires pour enfants, Made in France","channel":"news","owner":"xf4wt7"},{"id":"x51qy8c","title":"Download Learn French: Do you want to learn french using short Sentences? (French language, French","channel":"news","owner":"x1vvlff"},{"id":"x7rsn8i","title":"La France a tout pour r\u00e9ussir : Le taux de ch\u00f4mage au plus bas en France depuis 2008 - Vendredi 14 f\u00e9vrier","channel":"news","owner":"x197cwb"},{"id":"xmi144","title":"19 20 Poitou-Charentes du 17 11 2011 - Toute l'information en vid\u00e9o de France 2, France 3, France 5, RFO. Les vid\u00e9os d'info de France T\u00e9l\u00e9visions2","channel":"news","owner":"xgzf98"},{"id":"x7rkicv","title":"INVESTISSEMENTS EN FRANCE : \u00ab 64 % DES INVESTISSEURS AMERICAINS JUGENT QUE LA FRANCE EST ATTRACTIVE OU TRES ATTRACTIVE ECONOMIQUEMENT \u00bb - STEPHANIE BARREAU - L\u2019INVITE DE L\u2019ECONOMIE DU 06\/02\/2020","channel":"news","owner":"x2e9el"},{"id":"x3p4rl1","title":"Learn French With Rocket French - Speaking French and Loving French Culture","channel":"news","owner":"x1q05o9"},{"id":"x2antvm","title":"Learn French - Speak French - Learn French Software - Rocket French","channel":"news","owner":"x1h8cgk"},{"id":"x7rilnm","title":"Franck Mouthon (France Biotech) : La France est le second pays europ\u00e9en attirant le plus de capitaux apr\u00e8s le Royaume-Uni - 05\/02","channel":"news","owner":"x197cwb"},{"id":"x7r5bb1","title":"La France bouge : Antonin Laurent, fondateur de LookUp, support d\u2019ordinateur nomade made in France","channel":"news","owner":"xf4wt7"},{"id":"x1ir6eq","title":"Avocat International, French lawyer and Attorney, French solicitor, France, USA, UK France 24","channel":"news","owner":"x15zl2"},{"id":"x7roiba","title":"[Read] Fluent in French: The Most Complete Study Guide to Learn French  For Kindle","channel":"news","owner":"x2cnn96"}]}

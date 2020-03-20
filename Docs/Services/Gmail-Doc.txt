@@ -1,0 +1,32 @@
+# Documentation pour le service Gmail
+
+	Envoyer les identifiants via les params Username et Password de RegisterService
+	
+		Envoyer un email
+	
+		Requête:
+
+			- int ActionId = 12
+			- string Params = "{Mail du destinataire}|{Sujet}|{Message}"
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=12&token={token}&params=hello@gmail.com|Bonjour|Bonjour%et%Bienvenue
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 11 // GetFriends
+
+			- public int ServiceId = 6 // Steam
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			Réponse true ou false;

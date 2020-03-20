@@ -1,2 +1,2 @@
-# Area-Epitech
+# Area
  

@@ -1,0 +1,31 @@
+﻿# Pour mettre à jour les infos utilisateurs
+
+	Requête:
+
+		- Username
+        - Name
+        - Mail
+		- Password
+        - Token
+
+		http://127.0.0.1:8080/profileupdaterequestmessage?username={username}&name={name}&mail={mail}&password={password}&token={token}
+
+	Réponse:
+		
+		- Non nul:
+
+            public ProfileResultEnum Result
+
+	Données:
+
+        public enum ProfileResultEnum
+        {
+            None = 0,
+            Success = 1,
+            UsernameAlreadyRegistered = 2,
+            MailAlreadyRegistered = 3,
+            InvalidUsername = 4,
+            InvalidMail = 5,
+            InvalidPassword = 6,
+            InternalError = 7
+        }

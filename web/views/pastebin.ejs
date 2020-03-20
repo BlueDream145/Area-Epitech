@@ -1,0 +1,30 @@
+<% if (data) { %>
+<% if (action == 15) {%>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="card">
+			<div class="card-body table-responsive p-0">
+				<table class="table table-head-fixed text-nowrap">
+					<thead>
+						<tr>
+							<th scope="col">Titre</th>
+							<th> Date d'expiration</th>
+							<th>Url</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for (let i = 0; data[i] != null; i++) { %>
+						<tr>
+							<td><%= data[i].Title%></td>
+							<td><%= data[i].ExpireDate%></td>
+							<td><a href="<%= data[i].Url%>">Lien</a></td>
+						</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<% } %>

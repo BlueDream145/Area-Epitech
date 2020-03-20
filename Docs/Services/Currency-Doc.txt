@@ -1,0 +1,65 @@
+# Documentation pour le service Currency
+
+# Le service permet les actions suivantes:
+
+	- ActionEnum.GetCurrenciesValues (ID=2)
+		
+		Obtient les valeurs des différentes devise sur la base EURO.
+	
+		Requête:
+
+			- int ActionId = 2
+			- string Params = Vide
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=2&token=[token}&params=
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 2 // GetCurrenciesValues
+
+			- public int ServiceId = 2 // Currency
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"MessageId":16,"Result":2,"ActionId":2,"ServiceId":2,"Output":"{\"rates\":{\"CAD\":1.4604,\"HKD\":8.5168,\"ISK\":137.9,\"PHP\":55.816,\"DKK\":7.4724,\"HUF\":338.15,\"CZK\":25.03,\"AUD\":1.6417,\"RON\":4.7613,\"SEK\":10.5455,\"IDR\":15063.25,\"INR\":78.3625,\"BRL\":4.7078,\"RUB\":70.0203,\"HRK\":7.455,\"JPY\":120.51,\"THB\":34.333,\"CHF\":1.0705,\"SGD\":1.5255,\"PLN\":4.2653,\"BGN\":1.9558,\"TRY\":6.5688,\"CNY\":7.6711,\"NOK\":10.1673,\"NZD\":1.7094,\"ZAR\":16.4204,\"USD\":1.0969,\"MXN\":20.5281,\"ILS\":3.7585,\"GBP\":0.8472,\"KRW\":1309.78,\"MYR\":4.5412},\"base\":\"EUR\",\"date\":\"2020-02-07\"}","Param":""}
+
+	- ActionEnum.GetSpecificCurrencyValue (ID=3)
+	
+		Obtient les valeurs d'une devise sur la base EURO.
+	
+		Requête:
+
+			- int ActionId = 3
+			- string Params = Devise à récupérer
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=3&token={token}&params=USD
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 3 // GetSpecificCurrencyValue
+
+			- public int ServiceId = 2 // Currency
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"MessageId":16,"Result":2,"ActionId":3,"ServiceId":2,"Output":"{\"rates\":{\"CAD\":1.4604,\"HKD\":8.5168,\"ISK\":137.9,\"PHP\":55.816,\"DKK\":7.4724,\"HUF\":338.15,\"CZK\":25.03,\"AUD\":1.6417,\"RON\":4.7613,\"SEK\":10.5455,\"IDR\":15063.25,\"INR\":78.3625,\"BRL\":4.7078,\"RUB\":70.0203,\"HRK\":7.455,\"JPY\":120.51,\"THB\":34.333,\"CHF\":1.0705,\"SGD\":1.5255,\"PLN\":4.2653,\"BGN\":1.9558,\"TRY\":6.5688,\"CNY\":7.6711,\"NOK\":10.1673,\"NZD\":1.7094,\"ZAR\":16.4204,\"USD\":1.0969,\"MXN\":20.5281,\"ILS\":3.7585,\"GBP\":0.8472,\"KRW\":1309.78,\"MYR\":4.5412},\"base\":\"EUR\",\"date\":\"2020-02-07\"}","Param":""}

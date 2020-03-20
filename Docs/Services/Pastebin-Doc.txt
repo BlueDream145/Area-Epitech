@@ -1,0 +1,117 @@
+# Documentation pour le service Pastebin
+
+	Pastebin est un service qui permet de stoquer du code et de générer un URL pour consulter celui-ci.
+
+	Envoyer les identifiants via les params Username et Password de RegisterService
+	
+		Obtenir les pastes
+		
+			Requête:
+
+				- int ActionId = 15
+				- string Params = Vide
+				- string Token
+				
+			Exemple:
+			
+				http://127.0.0.1:8080/actionrequestmessage?actionid=15&token={token}&params=
+			
+			Réponse:
+			
+			
+				- public ActionResultEnum Result = 2 // Success
+
+				- public int ActionId = 15 // GetAllPastes
+
+				- public int ServiceId = 9 // Pastebin
+
+				- public string Output // Données JSON qui contiennent les informations demandées
+
+				- public string Param  // Param précédement envoyé
+				
+			JSON:
+			
+				{{
+				  "data": [
+					{
+					  "Key": "5ghscJE4",
+					  "CreateDate": "2020-02-17T20:17:51+00:00",
+					  "Title": "Title",
+					  "Size": 24,
+					  "ExpireDate": "2020-02-17T20:27:51+00:00",
+					  "Expiration": {
+						"Time": "00:10:00"
+					  },
+					  "Visibility": 0,
+					  "Language": {},
+					  "Url": "https://pastebin.com/5ghscJE4",
+					  "Hits": 5,
+					  "Text": null
+					},
+					{
+					  "Key": "t7UQisuN",
+					  "CreateDate": "2020-02-17T20:15:03+00:00",
+					  "Title": "Title",
+					  "Size": 24,
+					  "ExpireDate": "2020-02-17T20:25:03+00:00",
+					  "Expiration": {
+						"Time": "00:10:00"
+					  },
+					  "Visibility": 0,
+					  "Language": {},
+					  "Url": "https://pastebin.com/t7UQisuN",
+					  "Hits": 8,
+					  "Text": null
+					},
+					{
+					  "Key": "3uvcJcBd",
+					  "CreateDate": "2020-02-17T20:13:38+00:00",
+					  "Title": "Title",
+					  "Size": 24,
+					  "ExpireDate": "2020-02-17T20:23:38+00:00",
+					  "Expiration": {
+						"Time": "00:10:00"
+					  },
+					  "Visibility": 0,
+					  "Language": {},
+					  "Url": "https://pastebin.com/3uvcJcBd",
+					  "Hits": 44,
+					  "Text": null
+					}
+				  ]
+				}}
+				
+			Créer un paste
+		
+			Requête:
+
+				- int ActionId = 16
+				- string Params = {Titre du paste}|{Contenu}
+				- string Token
+				
+			Exemple:
+			
+				http://127.0.0.1:8080/actionrequestmessage?actionid=16&token={token}&params=Titre|Just%saying%hello%!
+			
+			Réponse:
+			
+			
+				- public ActionResultEnum Result = 2 // Success
+
+				- public int ActionId = 16 // GetAllPastes
+
+				- public int ServiceId = 9 // Pastebin
+
+				- public string Output // Données JSON qui contiennent les informations demandées
+
+				- public string Param  // Param précédement envoyé
+				
+			JSON:
+			
+			{{
+			  "data": {
+				"URL": "https://pastebin.com/1r8uGE90",
+				"Paste key": "1r8uGE90",
+				"Content": "Msg: Just saying hello !"
+			  }
+			}}

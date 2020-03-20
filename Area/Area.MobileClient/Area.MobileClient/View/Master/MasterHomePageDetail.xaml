@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Area.View.Master.MasterHomePageDetail"
+             Title="Detail">
+  <StackLayout Padding="10">
+        <Label x:Name="LabelHeader" Text="Welcome, you are connected !"/>
+        <Label x:Name="UsernameHeader" Text="Username:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" IsVisible="false"/>
+        <Entry x:Name="Username" Text="" IsVisible="false"/>
+        <Label x:Name="PasswordHeader" Text="Password:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"  IsVisible="false"/>
+        <Entry x:Name="Password" Text="" IsPassword="True" IsVisible="false"/>
+        <WebView x:Name="LoginViewer"
+            HeightRequest="500"
+            WidthRequest="500"
+                 IsVisible="False"/>
+        <Button x:Name="ValidateButton" Text="Add account" Clicked="Button_Validate_Clicked"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"  IsVisible="false"/>
+        <WebView x:Name="AuthView" IsVisible="false"/>
+    </StackLayout>
+</ContentPage>

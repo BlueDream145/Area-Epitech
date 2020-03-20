@@ -1,0 +1,87 @@
+﻿# Pour se connecter
+
+	Requête:
+
+		- Username
+		- Password
+
+		http://127.0.0.1:8080/identificationmessage?username={username}&password={password}
+
+	Réponse:
+		
+		- Non nul:
+			
+			public IdentificationResultEnum Result
+
+		- Possiblement nul:
+
+			public string Username
+			public string Name
+			public string Mail
+			public string Token
+			public List<ServiceMessage> Services
+
+	Données:
+
+		public enum IdentificationResultEnum
+		{
+			None = 0,
+			Success = 1,
+			BadCredentials = 2,
+			InternalError = 3
+		}
+
+        public class ServiceMessage
+		{
+			public int Id
+
+			public string Name
+
+			public string Description
+
+			public bool Registered
+
+			public List<ActionMessage> Actions
+
+			public List<ReactionMessage> Reactions
+		}
+
+		public class ActionMessage / ReactionMessage
+		{
+			public int Id
+
+			public string Name
+
+			public string Description
+		}
+
+# Pour s'inscrire
+
+	Requête:
+
+		- Username
+		- Name
+		- Mail
+		- Password
+
+		http://127.0.0.1:8080/registermessage?username={username}&password={password}&name={name}&mail={mail}
+
+	Réponse:
+
+		- Non nul:
+			
+			public RegisterResultEnum Result
+
+	Données:
+
+		public enum RegisterResultEnum
+		{
+			None = 0,
+			Success = 1,
+			UsernameAlreadyRegistered = 2,
+			MailAlreadyRegistered = 3,
+			InvalidUsername = 4,
+			InvalidMail = 5,
+			InvalidPassword = 6,
+			InternalError = 7
+		}

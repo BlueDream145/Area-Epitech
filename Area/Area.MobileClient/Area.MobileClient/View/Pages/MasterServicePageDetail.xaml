@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Area.MobileClient.View.Master.MasterServicePageDetail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="ServiceName" Text="Service name: "
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Label x:Name="ServiceDescription" Text="Service description: "
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Button x:Name="UnregisterButton" Text="Remove" Clicked="Button_Unregister_Clicked"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"
+                    IsVisible="false"/>
+            <Label Text="Available actions:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <ListView x:Name="ActionsView"
+                    ItemsSource="{Binding Employees}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DisplayName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Available reactions:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <ListView x:Name="ReactionsView"
+                    ItemsSource="{Binding Employees}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding DisplayName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

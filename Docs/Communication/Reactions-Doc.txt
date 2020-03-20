@@ -1,0 +1,25 @@
+﻿# Pour utiliser une réaction
+
+	Requête:
+
+        - int ActionId
+        - string Token
+
+		http://127.0.0.1:8080/reactionrequestmessage?actionid={actionid}&token={token}
+
+	Réponse:
+		
+		- Non nul:
+		
+			public ReactionResultEnum Result
+
+			public string Output
+
+	Données:
+	
+		public enum ReactionResultEnum
+		{
+			None,
+			BadParams,
+			Success
+		}

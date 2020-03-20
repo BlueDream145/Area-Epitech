@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Area.Server": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
