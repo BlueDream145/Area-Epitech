@@ -10,8 +10,8 @@ The goal of this project is to discover, as a whole, the software platform that 
 		
 	# Mobile Client
 		Folder = Area/Area.MobileClient
-			~IOS lib: Area/Area.MobileClient.Android
-			~Android lib: Area/Area.MobileClient.IOS
+			~IOS lib: Area/Area.MobileClient.IOS
+			~Android lib: Area/Area.MobileClient.Android
 
 	# Web Client
 		Folder = Web
