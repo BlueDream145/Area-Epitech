@@ -1,0 +1,23 @@
+<% if (data) { %>
+<% if (action == 1 || action == 8 || action == 9) { %>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="card-deck">
+			<div class="card-body table-responsive p-1">
+				<% for (let i = 0; data.data[i] != null; i++) { %>
+				<div class="card">
+					<div class="card-body">
+						<a href="<%= data.data[i].link%>" class="stretched-link"></a>
+						<p class="card-text"><%= data.data[i].title%></p>
+					</div>
+					<div class="card-footer">
+						<%= data.data[i].account_url%>
+					</div>
+				</div>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<% } %>

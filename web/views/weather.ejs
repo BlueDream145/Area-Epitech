@@ -1,0 +1,31 @@
+<% if (data) { %>
+	<% if (action == 7 || action == 6) {%>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="card m-5">
+					<div class="col col-lg-auto">
+						<div class="card m-5 text-center" style=" display: inline-block;">
+							<div class="card-body text-center">
+								<img src="<%= data.current.weather_icons%>">
+								<br><br>
+								<h2><%= data.current.temperature%> °C</h2>
+								<br>
+								<%= data.request.query%>
+								<br>
+								<%= data.location.region%>
+								<br>
+								<%= data.current.weather_description%>
+								<br>
+								Vent: <%= data.current.wind_speed%> Km/h
+								<br>
+								Precipitation: <%= data.current.precip%>%
+								<br>
+								Humidite: <%= data.current.humidity%>%
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% } %>
+<% } %>

@@ -1,0 +1,35 @@
+<% if (data) { %>
+<% if (action == 5 || action == 4) {%>
+	<% if (data.status == "ok") { %>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="card-deck">
+				<div class="card-body table-responsive p-0">
+							<% for (let i = 0; data.articles[i] != null; i++) { %>
+								<div class="card">
+									<div class="card-header">
+										<h2><%= data.articles[i].title%></h2>
+										<div class="card-tools">
+											<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+											<i class="fas fa-minus"></i></button>
+											<button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+											<i class="fas fa-times"></i></button>
+										</div>
+									</div>
+									<img class="card-img-top" src="<%= data.articles[i].urlToImage%>" alt="">
+									<div class="card-body">
+										<a href="<%= data.articles[i].url%>" class="stretched-link"></a>
+										<p class="card-text"><%= data.articles[i].content%></p>
+									</div>
+									<div class="card-footer">
+										<%= data.articles[i].author%>
+									</div>
+								</div>
+							<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+	<% } %>
+<% } %>
+<% } %>

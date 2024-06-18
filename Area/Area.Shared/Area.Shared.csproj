@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protocol\Actions\readme.txt" />
+    <None Remove="Protocol\Connection\readme.txt" />
+    <None Remove="Protocol\Profile\readme.txt" />
+    <None Remove="Protocol\Reactions\readme.txt" />
+    <None Remove="Protocol\Services\readme.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>

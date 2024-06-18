@@ -1,0 +1,32 @@
+﻿# Pour utiliser une action
+
+	Requête:
+
+        - int ActionId
+		- string Params
+        - string Token
+
+		http://127.0.0.1:8080/actionrequestmessage?actionid={actionid}&token={token}&params={params}
+
+	Réponse:
+		
+		- Non nul:
+
+			public ActionResultEnum Result
+
+			public int ActionId
+
+			public int ServiceId
+
+			public string Output
+
+			public string Param
+
+	Données:
+	
+		public enum ActionResultEnum
+		{
+			None,
+			BadParams,
+			Success
+		}

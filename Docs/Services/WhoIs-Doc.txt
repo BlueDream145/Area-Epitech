@@ -1,0 +1,36 @@
+# Documentation pour le service WhoIs
+
+# Le service permet les actions suivantes:
+
+	- ActionEnum.CheckDomainInfos (ID=10)
+	
+		Retourne les informations d'un nom de domaine
+	
+		Requête:
+
+			- int ActionId = 10
+			- string Params = Nom de domaine
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=10&token={token}&params=cadernis.fr
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 10 // CheckDomainInfos
+
+			- public int ServiceId = 5 // WhoIs
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"MessageId":16,"Result":2,"ActionId":10,"ServiceId":5,"Output":"{\"result\":{\"name\":\"cadernis.fr\",\"created\":\"2009-07-31 22:56:54\",\"changed\":\"2019-05-05 19:00:29\",\"expires\":\"2020-06-28 22:07:16\",\"dnssec\":false,\"registered\":true,\"status\":\"ACTIVE\",\"nameservers\":[\"stan.ns.cloudflare.com\",\"jill.ns.cloudflare.com\"],\"contacts\":{\"owner\":[{\"handle\":\"ANO00-FRNIC\",\"type\":\"PERSON\",\"name\":\"Ano Nymous\",\"organization\":null,\"email\":null,\"address\":null,\"zipcode\":null,\"city\":null,\"state\":null,\"country\":null,\"phone\":null,\"fax\":null,\"created\":null,\"changed\":\"2018-05-26 08:31:34\"}],\"admin\":[{\"handle\":\"ANO00-FRNIC\",\"type\":\"PERSON\",\"name\":\"Ano Nymous\",\"organization\":null,\"email\":null,\"address\":null,\"zipcode\":null,\"city\":null,\"state\":null,\"country\":null,\"phone\":null,\"fax\":null,\"created\":null,\"changed\":\"2018-05-26 08:31:34\"}],\"tech\":[{\"handle\":\"TCP8-FRNIC\",\"type\":\"ROLE\",\"name\":\"Technical Contact for ProXad\",\"organization\":\"Free SAS \\/ ProXad\",\"email\":\"hostmaster@proxad.net\",\"address\":\"8, rue de la ville l'Eveque\",\"zipcode\":null,\"city\":\"75008 Paris\",\"state\":null,\"country\":\"FR\",\"phone\":\"+33 1 73 50 20 00\",\"fax\":\"+33 1 73 50 25 01\",\"created\":null,\"changed\":\"2004-02-16 23:00:00\"}]},\"registrar\":{\"id\":null,\"name\":\"ONLINE SAS\",\"email\":\"hostmaster@online.net\",\"url\":\"https:\\/\\/www.bookmyname.com\\/nom_de_domaine\\/tarif_nom_de_domaine.html\"}}}","Param":"cadernis.fr"}
+		
+	

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Area.MobileClient.View.Pages.MasterActionPageDetail">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="LabelHeader" Text="Action Page"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="LabelName" Text="Action name:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label x:Name="LabelDescription" Text="Action description:"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout x:Name="StackLayoutMap" Grid.Row="0" Padding="0" />
+            </Grid>
+            <StackLayout>
+                <Button Text="Run action" Clicked="Button_Run_Clicked"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+                <Button Text="Back" Clicked="Button_Back_Clicked"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

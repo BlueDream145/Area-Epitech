@@ -1,0 +1,93 @@
+﻿# Pour ajouter un service
+
+	Requête:
+	
+	- Optionel:
+
+        - Username // Laisser vide sauf pour le service Imgur, mettre l'accessToken
+
+        - Password // Laisser vide tout le temps
+		
+	- Obligatoire:
+
+        - ServiceId
+
+        - Token
+
+	http://127.0.0.1:8080/registerservicemessage?serviceid={serviceid}&username={username}&password={password}&token={token}
+
+	Réponse:
+		
+		- Non nul:
+
+            public List<ServiceMessage> Services
+
+	Données:
+
+        public class ServiceMessage
+		{
+			public int Id
+
+			public string Name
+
+			public string Description
+
+			public bool Registered
+
+			public List<ActionMessage> Actions
+
+			public List<ReactionMessage> Reactions
+		}
+
+		public class ActionMessage / ReactionMessage
+		{
+			public int Id
+
+			public string Name
+
+			public string Description
+		}
+
+# Pour supprimer un service
+
+
+	Requête:
+
+        - ServiceId
+
+        - Token
+
+		http://127.0.0.1:8080/deleteservicemessage?serviceid={serviceid}&token={token}
+
+		
+	Réponse:
+		
+		- Non nul:
+
+            public List<ServiceMessage> Services
+
+	Données:
+
+        public class ServiceMessage
+		{
+			public int Id
+
+			public string Name
+
+			public string Description
+
+			public bool Registered
+
+			public List<ActionMessage> Actions
+
+			public List<ReactionMessage> Reactions
+		}
+
+		public class ActionMessage / ReactionMessage
+		{
+			public int Id
+
+			public string Name
+
+			public string Description
+		}

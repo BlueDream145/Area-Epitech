@@ -1,0 +1,26 @@
+<% if (data) { %>
+<% if (action == 14 || action == 13) {%>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="card">
+			<div class="card-body table-responsive p-0">
+				<table class="table table-head-fixed text-nowrap">
+					<thead>
+						<tr>
+							<th scope="col">Videos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% for (let i = 0; data.list[i] != null; i++) { %>
+						<tr>
+							<td><a href="https://www.dailymotion.com/embed/video/<%= data.list[i].id%>"><%= data.list[i].title%></a></td>
+						</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<% } %>

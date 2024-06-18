@@ -1,0 +1,32 @@
+<% if (data) { %>
+<% if (action == 10) {%>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="card">
+			<div class="card-body table-responsive p-0">
+				<table class="table table-head-fixed text-nowrap">
+					<thead>
+						<tr>
+							<th scope="col"><%= data.result.name%></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>Existant:</td>
+							<td><%= data.result.registered%></td></tr>
+						<tr><td>Date de creation:</td>
+							<td><%= data.result.created%></td></tr>
+						<tr><td>Dernier changement:</td>
+							<td><%= data.result.changed%></td></tr>
+						<tr><td>Expire:</td>
+							<td><%= data.result.expires%></td></tr>
+						<tr><td>dnssec:</td>
+							<td><%= data.result.dnssec%></td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>
+<% } %>

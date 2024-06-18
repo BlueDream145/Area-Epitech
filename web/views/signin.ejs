@@ -1,0 +1,48 @@
+<%- include('includes/header') -%>
+    <title>Area - Connexion</title>
+</head>
+<body>
+  	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+  	<!-- Header Section -->
+  	<header class="header-section">
+    	<a href="/" class="site-logo">
+        	<img src="/images/icon.png" alt="" height="60">
+      	</a>
+      	<nav class="header-nav">
+    	  	<ul class="main-menu">
+				<li><a href="/">Accueil</a></li>
+				<li><a href="/signup">Inscription</a></li>
+				<li><a href="/signin" class="active">Connexion</a></li>
+			</ul>
+		</nav>
+    </header>
+    <!-- Header Section end -->
+
+  <!-- Hero Section -->
+	<section class="hero-section">
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-lg-6">
+					<form class="hero-form rounded" action="/signin" method="post">
+            			<h2>Connexion</h2>
+						<input type="username" class="rounded" id="username" name="username" placeholder="Username" required autofocus>
+            			<input type="password" class="rounded" id="Password" name="password" placeholder="Mot de passe" required>
+						<a href="/signin" class="readmore"><img src="/images/arrow.png" alt="">  Mot de passe oublié ?</a>
+						<button type="submit" class="site-btn sb-green pull-right">Valider</button>
+						<p><%= message %></p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- <div class="hero-slider owl-carousel">
+			<div class="hs-item set-bg" data-setbg="/images/hero-slider/1.jpg"></div>
+			<div class="hs-item set-bg" data-setbg="/images/hero-slider/2.jpg"></div>
+			<div class="hs-item set-bg" data-setbg="/images/hero-slider/3.jpg"></div>
+		</div> -->
+	</section>
+</body>
+<%- include('includes/footer') -%>

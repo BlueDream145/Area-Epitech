@@ -1,0 +1,54 @@
+services:
+
+    db:
+      image: mysql:5.7
+      restart: always
+      environment:
+        MYSQL_DATABASE: 'area'
+        MYSQL_USER: 'user'
+        MYSQL_PASSWORD: ''
+        MYSQL_ROOT_PASSWORD: ''
+        MYSQL_ROOT_HOST: '%'
+      ports:
+        - '3306:3306'
+      volumes:
+        - my-db:/var/lib/mysql
+
+    server:
+      build:
+        context: Area/Area.Server
+        dockerfile: Dockerfile
+      ports:
+          - "8080:8080"
+      depends_on:
+          - db
+
+    mobile:
+      build:
+        context: Area/Area.MobileClient/Area.MobileClient.Android
+        dockerfile: Dockerfile
+      volumes:
+        - shared:/app
+
+    web:
+       build:
+         context: ./web
+         dockerfile: Dockerfile
+       command: "npm run dev"
+       environment:
+         - NODE_ENV=production
+       restart: on-failure
+       volumes:
+        - shared:/app
+       ports:
+           - "8081:8081"
+       depends_on:
+           - mobile
+           - server
+           - db
+
+version: '3.5'
+
+volumes:
+  my-db:
+  shared:

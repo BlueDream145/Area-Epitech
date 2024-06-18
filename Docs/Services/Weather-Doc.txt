@@ -1,0 +1,67 @@
+# Documentation pour le service Weather
+
+# Le service permet les actions suivantes:
+
+	- ActionEnum.GetLocalWeather (ID=7)
+	
+		Retourne les informations météorologique de la zone géographique actuelle.
+	
+		Requête:
+
+			- int ActionId = 7
+			- string Params = Vide
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=7&token={token}&params=
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 7 // CheckDomainInfos
+
+			- public int ServiceId = 4 // Weather
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"MessageId":16,"Result":2,"ActionId":7,"ServiceId":4,"Output":"{\"request\":{\"type\":\"City\",\"query\":\"Paris, France\",\"language\":\"en\",\"unit\":\"m\"},\"location\":{\"name\":\"Paris\",\"country\":\"France\",\"region\":\"Ile-de-France\",\"lat\":\"48.867\",\"lon\":\"2.333\",\"timezone_id\":\"Europe\\/Paris\",\"localtime\":\"2020-02-09 00:54\",\"localtime_epoch\":1581209640,\"utc_offset\":\"1.0\"},\"current\":{\"observation_time\":\"11:54 PM\",\"temperature\":7,\"weather_code\":116,\"weather_icons\":[\"https:\\/\\/assets.weatherstack.com\\/images\\/wsymbols01_png_64\\/wsymbol_0004_black_low_cloud.png\"],\"weather_descriptions\":[\"Partly cloudy\"],\"wind_speed\":9,\"wind_degree\":190,\"wind_dir\":\"S\",\"pressure\":1020,\"precip\":0,\"humidity\":100,\"cloudcover\":75,\"feelslike\":5,\"uv_index\":1,\"visibility\":7,\"is_day\":\"no\"}}","Param":""}
+	
+
+	- ActionEnum.GetWeatherByLocation (ID=6)
+	
+		Retourne les informations météorologique d'un endroit (Ville / Pays / Région)
+	
+		Requête:
+
+			- int ActionId = 6
+			- string Params = Ville / Pays / Région
+			- string Token
+			
+		Exemple:
+		
+			http://127.0.0.1:8080/actionrequestmessage?actionid=6&token={token}&params=Paris
+		
+		Réponse:
+		
+		
+			- public ActionResultEnum Result = 2 // Success
+
+			- public int ActionId = 6 // GetWeatherByLocation
+
+			- public int ServiceId = 4 // Weather
+
+			- public string Output // Données JSON qui contiennent les informations demandées
+
+			- public string Param  // Param précédement envoyé
+			
+		JSON:
+		
+			{"MessageId":16,"Result":2,"ActionId":6,"ServiceId":4,"Output":"{\"request\":{\"type\":\"City\",\"query\":\"Paris, France\",\"language\":\"en\",\"unit\":\"m\"},\"location\":{\"name\":\"Paris\",\"country\":\"France\",\"region\":\"Ile-de-France\",\"lat\":\"48.867\",\"lon\":\"2.333\",\"timezone_id\":\"Europe\\/Paris\",\"localtime\":\"2020-02-09 00:54\",\"localtime_epoch\":1581209640,\"utc_offset\":\"1.0\"},\"current\":{\"observation_time\":\"11:54 PM\",\"temperature\":7,\"weather_code\":116,\"weather_icons\":[\"https:\\/\\/assets.weatherstack.com\\/images\\/wsymbols01_png_64\\/wsymbol_0004_black_low_cloud.png\"],\"weather_descriptions\":[\"Partly cloudy\"],\"wind_speed\":9,\"wind_degree\":190,\"wind_dir\":\"S\",\"pressure\":1020,\"precip\":0,\"humidity\":100,\"cloudcover\":75,\"feelslike\":5,\"uv_index\":1,\"visibility\":7,\"is_day\":\"no\"}}","Param":""}
+	

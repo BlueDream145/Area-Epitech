@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Area.MobileClient.View.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Username:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="Username" Text=""/>
+            <Label Text="Name:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="Name" Text=""/>
+            <Label Text="Mail:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="Mail" Text=""/>
+            <Label Text="Password:"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry x:Name="Password" Text="" IsPassword="True"/>
+            <Label x:Name="State" Text=""
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"/>
+            <StackLayout>
+                <Button Text="Register" Clicked="Button_Register_Clicked"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+                <Button Text="Connect" Clicked="Button_Connection_Clicked"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
